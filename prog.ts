@@ -1,8 +1,8 @@
-let sailorName: string = "Explorer";
-let yearsOfExperience: number = 0;
+let sailorName: string = "Omar";
+let yearsOfExperience: number = 2;
 
 function welcomeAboard(name: string): string {
-  return `Welcome aboard, ${name}! Your journey to Atlantis begins now.`;
+  return `Welcome aboard, ${name}! Your journey to Atlantis begins now with ${yearsOfExperience}.`;
 }
 
 console.log(welcomeAboard(sailorName));

@@ -1,0 +1,18 @@
+# TypeScript Build Outputs
+*.js
+*.js.map
+*.d.ts.map
+dist/
+build/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment & Logs
+.env
+*.log
+
+# Editor & OS Files
+.vscode/
+.DS_Store
