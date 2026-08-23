@@ -1,11 +1,14 @@
 import express from "express";
+import cors from "cors";
 import { Request,Response } from "express";
 import { addSupplyentry } from "./controller/controller";
+import { connectDB } from "./connection_db";
 const app = express();
 const port = process.env.port ||3000;
 
 app.use(express.json())
-
+app.use(cors());
+connectDB();
 
 app.post("/api/supplies", async (req: Request, res: Response) => {
   try {

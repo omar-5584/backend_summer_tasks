@@ -12,6 +12,7 @@
 "esModuleInterop": true,
 "types": ["node"],
 "verbatimModuleSyntax": false,
+
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -42,4 +43,7 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   }
+
+
+  
 }

@@ -3,8 +3,7 @@ import { google } from "googleapis";
 import path, { dirname } from "node:path";
 import ExcelJS, { Workbook } from "exceljs";
 import { Readable } from "stream";
-import { PRODUCTS_CONFIG, SupplyPayload } from "../model/model";
-import { response } from "express";
+import { ProductConfig, SupplyPayload } from "../model/model";import { response } from "express";
 
 
 
@@ -23,7 +22,10 @@ const auther= new google.auth.GoogleAuth(
 const drive = google.drive({ version: "v3",auth: auther });
 
 export async function addSupplyentry(data:SupplyPayload){
-const response = await drive.files.get(
+
+const productsConfig = await ProductConfig.find();
+
+  const response = await drive.files.get(
     {
       fileId: file_id,
       alt: "media",
@@ -72,10 +74,10 @@ const row = worksheet.getRow(targetRow);
   const monthShort = now.toLocaleString("en-US", { month: "short" });
   row.getCell(1).value = `${day}-${monthShort}`;
 
-  PRODUCTS_CONFIG.forEach((product) => {
-    const qty = Number(data[product.id] ?? 0);
-    row.getCell(product.qtyCol).value = qty;
-  });
+  productsConfig.forEach((product) => {
+  const qty = Number(data[product.productId] ?? 0);
+  row.getCell(product.qtyCol).value = qty;
+});
 
   row.commit();
 
