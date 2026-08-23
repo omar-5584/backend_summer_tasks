@@ -4,7 +4,7 @@ import { Request,Response } from "express";
 import { addSupplyentry } from "./controller/controller";
 import { connectDB } from "./connection_db";
 const app = express();
-const port = process.env.port ||3000;
+const port = Number(process.env.port) ||3000;
 
 app.use(express.json())
 app.use(cors());
@@ -26,6 +26,6 @@ app.post("/api/supplies", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
   console.log(`Server is sailing at http://localhost:${port}`);
 });

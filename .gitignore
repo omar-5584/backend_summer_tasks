@@ -17,3 +17,8 @@ node_modules/
 .vscode/
 .DS_Storebackend-summer-excel-*.json
 backend-summer-excel-*.json
+
+connection_db.ts
+.env
+node_modules/
+dist/
