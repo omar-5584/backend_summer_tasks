@@ -1,5 +1,5 @@
 
-import {PRODUCTS_CONFIG} from "./model/model"
+import {ProductConfig} from "./model/model"
 
 
 // connecting section
