@@ -5,7 +5,6 @@
     "outDir": "./dist",
     "rootDir": "./",
     "skipLibCheck": true,
-    "types": ["node"]
   },
   "include": ["src/**/*", "prog.ts"],
   "exclude": ["node_modules", "client", "dist"]
